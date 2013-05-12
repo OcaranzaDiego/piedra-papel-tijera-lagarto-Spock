@@ -27,15 +27,12 @@ public class Mano {
  
  public Resultado jugarCon(final Mano otra) {
   
-  Resultado resultadoPartida=Resultado.PIERDE;
+  Resultado resultadoPartida = Resultado.PIERDE;
   
   if(this.formaDelJugador==otra.formaDelJugador){
    resultadoPartida = Resultado.EMPATA;
   }
-  
-  
-  
-  switch (this.formaDelJugador) 
+        switch (this.formaDelJugador) 
         { 
             case PIEDRA: if (otra.formaDelJugador == Forma.TIJERA || otra.formaDelJugador == Forma.LAGARTO ) {
              
@@ -48,34 +45,28 @@ public class Mano {
              
              resultadoPartida = Resultado.GANA;             
             } 
-
                 break; 
 
             case PAPEL: if (otra.formaDelJugador == Forma.SPOCK || otra.formaDelJugador == Forma.PIEDRA){
              
              resultadoPartida = Resultado.GANA;             
             } 
-
                 break;               
 
             case LAGARTO: if (otra.formaDelJugador == Forma.PAPEL || otra.formaDelJugador == Forma.SPOCK){
              
              resultadoPartida = Resultado.GANA;             
             } 
-
                 break; 
                 
             case TIJERA: if (otra.formaDelJugador == Forma.LAGARTO || otra.formaDelJugador == Forma.PAPEL){
              
              resultadoPartida = Resultado.GANA;             
             } 
-
                 break;     
         }  
   
   return  resultadoPartida;
   
-  
-  
-}
+  }
 }

@@ -3,41 +3,31 @@ package edu.tallerweb.pptls;
  * Representa una de las Manos involucradas en el juego
  */
 public class Mano {
-
  /**
   * Toda Mano debe crearse con una forma dada, que será
   * la que determine su condición en el juego.
   * @param forma, la Forma que adopta la Mano.
   */
- 
  private Forma formaDelJugador;
- 
  public Mano(final Forma forma) {
-  
  this.formaDelJugador=forma;
- 
- }
-
+  }
  /**
   * Evaluará el resultado de la partida según las reglas
   * del juego.
   * @param otra, la otra Mano.
   * @return un Resultado, de acuerdo al estado del juego.
   */
- 
- public Resultado jugarCon(final Mano otra) {
-  
+  public Resultado jugarCon(final Mano otra) {
   Resultado resultadoPartida = Resultado.PIERDE;
-  
-  if(this.formaDelJugador==otra.formaDelJugador){
+  if (this.formaDelJugador == otra.formaDelJugador){
    resultadoPartida = Resultado.EMPATA;
   }
-        switch (this.formaDelJugador) 
+       switch (this.formaDelJugador) 
         { 
             case PIEDRA: if (otra.formaDelJugador == Forma.TIJERA || otra.formaDelJugador == Forma.LAGARTO ) {
              
              resultadoPartida = Resultado.GANA;
-             
             }
                 break; 
 
@@ -65,8 +55,6 @@ public class Mano {
             } 
                 break;     
         }  
-  
-  return  resultadoPartida;
-  
-  }
+    return  resultadoPartida;
+    }
 }
